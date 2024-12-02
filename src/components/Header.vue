@@ -1,18 +1,34 @@
 <script>
 export default {
-name: "Header"
+  name: "Header"
 }
 </script>
 
 <template>
   <header>
-    <router-link to="/">메인으로 이동</router-link>
-    <router-link to="/companyboard">게시판이동임ㅋㅋ</router-link>
+    <router-link class="logo" to="/">퓰리처 맵</router-link>
+
+    <nav>
+      <router-link to="/LoginPage">로그인</router-link>
+      <router-link to="/board">게시판이동임ㅋㅋ</router-link>
+    </nav>
   </header>
 </template>
 
-<style scoped>
+
+<style scoped lang="scss">
 header {
-  background: red;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  nav {
+    display: flex;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
 }
 </style>
