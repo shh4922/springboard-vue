@@ -35,9 +35,9 @@ export const register = async (data:Object): Promise<Object>  => {
     }
 };
 
-export const login = async (data:Object): Promise<Object>  => {
+export const login = async (data:Object): Promise<DefaultRes<LoginResponse>>  => {
     try {
-        const res = await http<Object>("/user/login", { method: "POST", data: data});
+        const res = await http<DefaultRes<LoginResponse>>("/user/login", { method: "POST", data: data});
         return res
     } catch (e) {
         if (axios.isAxiosError(e)) {
@@ -47,3 +47,4 @@ export const login = async (data:Object): Promise<Object>  => {
         }
     }
 };
+

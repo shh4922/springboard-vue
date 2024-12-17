@@ -9,7 +9,7 @@ export default {
     <router-link class="logo" to="/">퓰리처 맵</router-link>
 
     <nav>
-      <router-link to="/LoginPage">로그인</router-link>
+      <router-link to="/loginPage">로그인</router-link>
       <router-link to="/board">게시판이동임ㅋㅋ</router-link>
     </nav>
   </header>
