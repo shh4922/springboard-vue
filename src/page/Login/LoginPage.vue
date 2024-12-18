@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import {computed, reactive, ref, watch} from "vue";
 import { login } from "@/api/Auth/Auth";
-import {mapState} from "pinia";
-import {useAuthStore} from "@/stores/AuthStore";
+import {useStore} from "vuex";
 
+
+const store = useStore()
+const accessToken = computed(() => store.state.authStore.accessToken);
 
 const email = ref<string>("");
 const password = ref<string>("");
@@ -20,8 +22,9 @@ async function postLogin() {
       alert(res.responseMessage)
       return
     }
-    const accessToken = res.data.acessToken
-    localStorage.setItem("accessToken", accessToken)
+    console.log(accessToken.value)
+    store.commit('authStore/setAccessToken', res.data.acessToken)
+    console.log(accessToken.value)
   } catch (error) {
     alert(error)
   }
